@@ -19,5 +19,13 @@ class ProcessOrderSpec extends FlatSpec with Matchers {
   it should "have a cost of £2.20 for a Steak Sandwich" in {
     assert(Order.process(Array[String]("Steak Sandwich")) == 5.40)
   }
+  it should "have a price of 0.00 for an empty string order" in {
 
+    assertThrows[IllegalArgumentException] {
+      (Order.process(Array[String]("")))
+    }
+  }
+  it should "have a price of 0.00 for an empty order" in {
+    assertThrows[IllegalArgumentException](Order.process(Array[String]()))
+  }
 }

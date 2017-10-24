@@ -6,9 +6,14 @@ package com.jumar.cafe
 object Order {
 
   def main(args: Array[String]): Unit = {
+
+    require(!args.isEmpty, "Unable to process an empty order")
+    require(args != null, "Unable to process a null order")
+
     val customerOrder = args.toList
-    val totalPrice = if (!customerOrder.isEmpty) placeOrder(customerOrder) else 0.0
-    println(s"Total price: $totalPrice")
+    val totalPrice: BigDecimal = placeOrder(customerOrder)
+    val scaledPrice = totalPrice.setScale(2)
+    println(s"Total price: $scaledPrice")
   }
 
   /**
