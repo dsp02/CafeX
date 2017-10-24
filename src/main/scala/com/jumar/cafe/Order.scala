@@ -5,6 +5,23 @@ package com.jumar.cafe
   */
 object Order {
 
+  def main(args: Array[String]): Unit = {
+    val customerOrder = args.toList
+    val totalPrice = if (!customerOrder.isEmpty) placeOrder(customerOrder) else 0.0
+    println(s"Total price: $totalPrice")
+  }
+
+  /**
+    * Places the order.
+    * @param order containing menu items
+    * @return the total price of the order
+    */
+  def placeOrder(order: List[String]): BigDecimal  = {
+    val checkedOrder = check(order, menu)
+    val totalPrice = total(checkedOrder)
+    totalPrice
+  }
+
   /**
     * Provides a total sum for the ordered items.
     * @param items to be ordered of the menu
