@@ -16,5 +16,4 @@ class MenuItemSpec extends FlatSpec with Matchers {
   it should "be priced at 50p" in {
     assert(Cola.price == 0.50)
   }
-
 }
