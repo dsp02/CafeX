@@ -26,6 +26,22 @@ object Order {
   }
 
   /**
+    * Calculates the bill total, this is the menu price plus any applicable service charges
+    * @param order 
+    * @return the amount to charge the customer
+    */
+  def calculateBill(order: List[MenuItem]): BigDecimal = {
+
+    val menuPrice: BigDecimal = total(order)
+
+    val serviceCharge: BigDecimal = serviceChargeApplicable(order, menuPrice, MaxServiceCharge)
+
+    val billTotal = menuPrice +  serviceCharge
+
+    billTotal
+  }
+
+  /**
     * Provides a total sum for the ordered items.
     * @param items to be ordered of the menu
     * @return the amount payable
