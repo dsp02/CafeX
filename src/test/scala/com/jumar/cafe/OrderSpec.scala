@@ -12,7 +12,7 @@ class OrderSpec extends FlatSpec with Matchers {
   val cheeseSandwich = List(CheeseSandwich)
   val steakSandwich = List(SteakSandwich)
 
-  val emptyList  = List[MenuItem]()
+  val emptyOrder  = List[MenuItem]()
 
   "A single Cola order" should "cost 50p" in {
     assert(Order.total(cola) == 0.50)
@@ -31,7 +31,7 @@ class OrderSpec extends FlatSpec with Matchers {
   }
 
   "An empty order" should "cost £0.00" in {
-    assert(Order.total(emptyList) == 0.0)
+    assert(Order.total(emptyOrder) == 0.0)
   }
 
   "A cola, coffee, cheese sandwich" should "cost £3.50" in {
@@ -41,7 +41,5 @@ class OrderSpec extends FlatSpec with Matchers {
   "A cola, coffee, cheese sandwich, steak sandwich" should "cost £8.00" in {
     assert(Order.total(cola ::: coffee ::: cheeseSandwich ::: steakSandwich) == 8.00)
   }
-
-
 
 }
