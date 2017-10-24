@@ -6,6 +6,11 @@ package com.jumar
 package object cafe {
 
   /**
+   * Maximum service charge applicable in this Cafe.
+   */
+  val MaxServiceCharge = 20.0
+
+  /**
     * The Cafe's menu.
     */
   val menu: Map[String, MenuItem] = Map(
