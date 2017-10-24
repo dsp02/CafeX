@@ -2,16 +2,22 @@ package com.jumar.cafe
 
 /**
   * Created by Derek on 24/10/2017.
+  *
+  * Processes a raw customer order placed in Cafe X.
+  * It displays the final bill for the order.
+  *
+  * Note:
   */
 object Order {
 
-  def main(args: Array[String]): Unit = {
+  def main(rawOrder: Array[String]): Unit = {
 
-    require(!args.isEmpty, "Unable to process an empty order")
-    require(args != null, "Unable to process a null order")
+    require(!rawOrder.isEmpty, "Unable to process an empty order")
+    require(rawOrder != null, "Unable to process a null order")
 
-    val customerOrder = args.toList
-    val totalPrice: BigDecimal = placeOrder(customerOrder)
+    val totalPrice: BigDecimal = process(rawOrder)
+
+    // display total order price.
     val scaledPrice = totalPrice.setScale(2)
     println(s"Total price: $scaledPrice")
   }
