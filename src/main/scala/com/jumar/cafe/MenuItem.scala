@@ -1,7 +1,7 @@
 package com.jumar.cafe
 
 /**
-  * Created by Derek on 24/10/2017.
+  * This trait represents the details required to place an item on the menu.
   */
 sealed trait MenuItem {
   def name: String
