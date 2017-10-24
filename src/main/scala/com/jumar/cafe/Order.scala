@@ -12,6 +12,22 @@ object Order {
   }
 
   /**
+    * Process the customer's order and give them the total price.
+    * @param order containing menu items
+    * @return the total price of the order
+    */
+  def process(order: Array[String]): BigDecimal = {
+
+    val customerOrder = order.toList
+
+    val checkedOrder = check(customerOrder, menu)
+
+    val orderPrice = calculateBill(checkedOrder)
+
+    orderPrice
+  }
+
+  /**
     * Places the order.
     * @param order containing menu items
     * @return the total price of the order
@@ -27,7 +43,7 @@ object Order {
 
   /**
     * Calculates the bill total, this is the menu price plus any applicable service charges
-    * @param order 
+    * @param order
     * @return the amount to charge the customer
     */
   def calculateBill(order: List[MenuItem]): BigDecimal = {
