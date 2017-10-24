@@ -19,7 +19,7 @@ object Order {
 
     // display total order price.
     val scaledPrice = totalPrice.setScale(2)
-    println(s"Total price: $scaledPrice")
+    println(scaledPrice)
   }
 
   /**
