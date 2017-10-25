@@ -7,7 +7,9 @@
 3. type the following at the sbt command line:
 
 clean
+
 compile
+
 run Cola Coffee "Cheese Sandwich"
 
 3.85 (should be the expected price)
