@@ -5,12 +5,14 @@
 2. Start sbt from the command line 
 
 3. type the following at the sbt command line:
-   clean
-   compile
-   run Cola Coffee "Cheese Sandwich"
-   3.85 (should be the expected price)
+
+clean
+compile
+run Cola Coffee "Cheese Sandwich"
+
+3.85 (should be the expected price)
    
-   The menu items are: Cola, Coffee, "Cheese Sandwich", "Steak Sandwich".
-   Note: quote "" are required around menu items that have multiple words.
+The menu items are: Cola, Coffee, "Cheese Sandwich", "Steak Sandwich" - case sensitive.
+Note: quotes "" are required around menu items that have multiple words.
   
 
