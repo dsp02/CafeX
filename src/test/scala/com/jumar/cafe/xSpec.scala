@@ -5,4 +5,4 @@ line 4
 line 5 changed remotely
 line 6
 line 7 changed remotely
-line 8 added remotely
+line 8 added remotely.
